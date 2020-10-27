@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+</head>
+<script src="../webjars/jquery/3.3.1-1\jquery.js"></script>
+<script>
+function submit() {
+    var params = {
+        "username": $("#username").val(),
+        "password": $("#password").val()
+    }
+    debugger;
+    $.ajax({
+        url:"index",
+        type:"POST",
+        data:params,
+        dataType:"json",
+        success:function(result){
+        },
+        error:function(){
+        },
+        async:false
+    });
+}
+</script>
+<body>
+<a style="margin: auto">登录/注册</a><br>
+<br>
+<input type="text"  aplaceholder="请输入用户名" id="username"/><br><br>
+<input type="password"  aplaceholder="请输入密码" id="password"/>
+<input type="button" value="登录" id="submit" onclick="submit()">
+
+
+</body>
+<style type="text/css">
+    #username{
+        height: 30px;
+        width:  40%;
+    }
+    #password{
+        height: 30px;
+        width:  30%;
+
+    }
+    #submit{
+        height: 35px;
+        width:  10%;
+    }
+</style>
+</html>
